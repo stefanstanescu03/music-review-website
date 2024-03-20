@@ -1,0 +1,50 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.logo-btn {
+  background-color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#logo-text {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+}
+
+.navbar-btn,
+.login-btn {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  border: 2px solid white;
+  background-color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.navbar-btn:hover {
+  border-bottom: 2px solid #f6995c;
+}
+
+.login-btn:hover {
+  color: #f6995c;
+  border-bottom: 2px solid #f6995c;
+}

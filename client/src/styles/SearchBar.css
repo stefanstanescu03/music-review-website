@@ -1,0 +1,28 @@
+.searchbar-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#search-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.search-btn {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.searchbar {
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #121212;
+  outline: none;
+}

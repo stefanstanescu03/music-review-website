@@ -1,0 +1,14 @@
+.account-info-container {
+  padding: 5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.greeting {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.info-text {
+  font-weight: normal;
+  font-size: 1.5rem;
+}

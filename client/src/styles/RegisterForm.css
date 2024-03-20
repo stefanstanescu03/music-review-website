@@ -1,0 +1,41 @@
+.form-title-register {
+  font-weight: 400;
+  font-size: 4rem;
+  color: white;
+  padding-bottom: 1rem;
+}
+
+.form-label-register {
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgb(145, 145, 145);
+}
+
+.register-input {
+  font-weight: 500;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #121212;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  outline: none;
+}
+
+.register-btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 30%;
+  border: none;
+  color: white;
+  background-color: #f6995c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background-color: white;
+  color: black;
+}

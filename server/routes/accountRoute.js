@@ -53,14 +53,17 @@ router.get("/:username", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    if (!req.body.username || !req.body.password) {
+    if (!req.query.username || !req.query.password) {
       return res.status(400).send({ message: "Incomplete informations" });
     }
 
+    const username = req.query.username;
+    const password = req.query.password;
+
     const response = await Account.find(
       {
-        password: req.body.password,
-        username: req.body.username,
+        password: password,
+        username: username,
       },
       { password: 0 }
     );
