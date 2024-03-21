@@ -30,7 +30,6 @@ function LoginForm() {
     if (response.message === "Account not found") {
       setDisplay(true);
     } else {
-      console.log(response[0]._id);
       setLoggedAccount({
         _id: response[0]._id,
         email: response[0].email,

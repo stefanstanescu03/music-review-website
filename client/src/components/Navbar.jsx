@@ -7,7 +7,6 @@ import { accountAtom } from "../App.jsx";
 
 function Navbar() {
   const [account] = useAtom(accountAtom);
-
   const navigate = useNavigate();
   return (
     <div className="navbar-container">
@@ -21,7 +20,9 @@ function Navbar() {
         <button className="navbar-btn" onClick={() => navigate("/explore")}>
           Explore
         </button>
-        <button className="navbar-btn">New Releases</button>
+        <button className="navbar-btn" onClick={() => navigate("/newreleases")}>
+          New Releases
+        </button>
         {account._id === "-1" ? (
           <button className="login-btn" onClick={() => navigate("/login")}>
             Login

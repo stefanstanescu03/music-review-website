@@ -100,7 +100,6 @@ router.put("/:id", async (req, res) => {
   try {
     if (
       !req.body.username ||
-      !req.body.password ||
       !req.body.email ||
       !req.body.first_name ||
       !req.body.last_name
