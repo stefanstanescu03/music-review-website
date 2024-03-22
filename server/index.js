@@ -15,6 +15,7 @@ app.use(cors());
 app.use("/test", testRoute);
 app.use("/account", accountRoute);
 app.use("/record", recordRoute);
+app.use("/image", express.static("./images"));
 
 mongoose
   .connect(mongoDBURL)

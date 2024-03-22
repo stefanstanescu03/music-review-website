@@ -49,6 +49,10 @@ const recordSchema = mongoose.Schema(
       ],
       required: false,
     },
+    img: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -1,0 +1,72 @@
+.card-container {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
+  border-bottom: 1px solid black;
+}
+
+.left-infos,
+.right-infos {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+.title-text {
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  background-color: white;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  /* display: contents; */
+  cursor: pointer;
+}
+
+.title-text:hover {
+  text-decoration: underline;
+}
+
+.subtitle-text {
+  font-size: 1rem;
+  color: rgb(39, 39, 39);
+}
+
+.rating-text {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: white;
+  /* height: 100%; */
+}
+
+.left-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-rect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+}
+
+.minimized-img {
+  max-width: 9rem;
+  height: auto;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

@@ -11,7 +11,8 @@ router.post("/", async (req, res) => {
       !req.body.type ||
       !req.body.genres ||
       !req.body.released ||
-      !req.body.description
+      !req.body.description ||
+      !req.body.img
     ) {
       return res.status(400).send({ message: "Incomplete informations" });
     }
@@ -25,6 +26,7 @@ router.post("/", async (req, res) => {
       description: req.body.description,
       rating: 0,
       reviews: [],
+      img: req.body.img,
     };
 
     const response = await Record.create(newRecord);
