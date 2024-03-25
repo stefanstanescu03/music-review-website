@@ -1,0 +1,35 @@
+.full-img {
+  max-width: 15rem;
+  height: auto;
+}
+
+.record-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+.infos-container-full {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.record-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.other-info {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(39, 39, 39);
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}

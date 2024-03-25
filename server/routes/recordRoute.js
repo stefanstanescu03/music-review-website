@@ -48,11 +48,11 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:name", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const { name } = req.params;
+    const { id } = req.params;
 
-    const response = await Record.find({ name: name });
+    const response = await Record.findById(id);
 
     if (!response || response.length == 0) {
       return res.status(404).send({ message: "Record not found" });

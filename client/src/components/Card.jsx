@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Card.css";
 
 function Card(props) {
+  const navigate = useNavigate();
+
   const pickColor = (rating) => {
     if (rating >= 7) return "#37cf18";
     if (rating >= 4 && rating < 7) return "#c79d13";
@@ -17,7 +20,12 @@ function Card(props) {
           className="minimized-img"
         />
         <div className="left-infos">
-          <button className="title-text">{props.name}</button>
+          <button
+            className="title-text"
+            onClick={() => navigate(`/record/${props._id}`)}
+          >
+            {props.name}
+          </button>
           <h1 className="subtitle-text">
             {props.artist.map((artist, index) =>
               index != props.artist.length - 1 ? artist + ", " : artist

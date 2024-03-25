@@ -20,6 +20,7 @@ function Explore() {
         {records.map((record) => {
           return (
             <Card
+              _id={record._id}
               name={record.name}
               artist={record.artists}
               released={record.released}
