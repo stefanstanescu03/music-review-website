@@ -1,0 +1,23 @@
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.rating-bar,
+.rating-bar-start,
+.rating-bar-end {
+  width: 2rem;
+  height: 0.8rem;
+  background-color: rgb(218, 218, 218);
+}
+.rating-bar-start {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.rating-bar-end {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}

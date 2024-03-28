@@ -92,6 +92,7 @@ router.put("/:id", async (req, res) => {
 
     let averageRating = 0;
     req.body.reviews.forEach((review) => (averageRating += review.rating));
+    console.log(averageRating);
     averageRating /= req.body.reviews.length;
 
     const response = await Record.findByIdAndUpdate(id, {

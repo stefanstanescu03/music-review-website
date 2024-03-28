@@ -1,5 +1,7 @@
 import { React, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAtom } from "jotai";
+import { accountAtom } from "../App";
 import Navbar from "../components/Navbar";
 import "../styles/Record.css";
 
@@ -7,6 +9,9 @@ import Review from "../components/Review";
 import AddReviewForm from "../components/AddReviewForm";
 
 function Record() {
+  const [loggedAccount] = useAtom(accountAtom);
+  const navigate = useNavigate();
+
   const path = useLocation();
 
   const pickColor = (rating) => {
@@ -26,6 +31,42 @@ function Record() {
     description: [],
     reviews: [],
   });
+
+  const handleAddReview = async (content, rating) => {
+    if (loggedAccount._id === "-1") {
+      navigate("/login");
+    } else {
+      const newReview = {
+        username: loggedAccount.username,
+        content: content,
+        rating: parseInt(rating),
+      };
+
+      console.log(newReview);
+
+      const url = `http://localhost:3000/record/${rec._id}`;
+      await fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ reviews: [...rec.reviews, newReview] }),
+      }).then((result) => result.json());
+
+      setRec({
+        _id: rec._id,
+        name: rec.name,
+        artists: rec.artists,
+        type: rec.type,
+        genres: rec.genres,
+        released: rec.released,
+        rating: rec.rating,
+        description: rec.description,
+        img: rec.img,
+        reviews: [...rec.reviews, newReview],
+      });
+    }
+  };
 
   useEffect(() => {
     fetch(`http://localhost:3000${path.pathname}`)
@@ -69,7 +110,7 @@ function Record() {
         </div>
       </div>
       <div className="reviews-container">
-        <AddReviewForm />
+        <AddReviewForm handleAdd={handleAddReview} />
         {rec.reviews.map((review) => {
           return (
             <Review

@@ -1,0 +1,58 @@
+.add-review-form {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50%;
+}
+
+.write-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgb(39, 39, 39);
+}
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-area {
+  font-family: "Nunito", sans-serif;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  font-family: "Nunito", sans-serif;
+}
+
+#point {
+  border-bottom: 1px solid black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.rating-digit-input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  padding: 0;
+  font-size: 2rem;
+  width: 2.1rem;
+  font-weight: 600;
+}
