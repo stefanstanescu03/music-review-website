@@ -65,6 +65,25 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get("/search/:searchterm", async (req, res) => {
+  try {
+    const { searchterm } = req.params;
+
+    const response = await Record.find({
+      name: { $regex: `${searchterm}`, $options: "i" },
+    });
+
+    if (!response || response.length == 0) {
+      return res.status(404).send({ message: "Record not found" });
+    }
+
+    return res.status(200).send(response);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: error.message });
+  }
+});
+
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;

@@ -10,6 +10,7 @@ import Explore from "./pages/Explore.jsx";
 import NewReleases from "./pages/NewReleases.jsx";
 import ChangeCredentials from "./pages/ChangeCredentials.jsx";
 import Record from "./pages/Record.jsx";
+import Search from "./pages/Search.jsx";
 
 export const accountAtom = atom({
   _id: "-1",
@@ -30,6 +31,7 @@ function App() {
       <Route path="/explore" element={<Explore />} />
       <Route path="/newreleases" element={<NewReleases />} />
       <Route path="/record/:id" element={<Record />} />
+      <Route path="/search" element={<Search />} />
     </Routes>
   );
 }

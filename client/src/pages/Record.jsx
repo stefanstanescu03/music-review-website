@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import "../styles/Record.css";
 
 import Review from "../components/Review";
+import AccountReview from "../components/AccountReview";
 import AddReviewForm from "../components/AddReviewForm";
 
 function Record() {
@@ -31,6 +32,15 @@ function Record() {
     description: [],
     reviews: [],
   });
+
+  const shouldReview = () => {
+    for (let i = 0; i < rec.reviews.length; i++) {
+      if (rec.reviews[i].username === loggedAccount.username) {
+        return true;
+      }
+    }
+    return false;
+  };
 
   const handleAddReview = async (content, rating) => {
     if (loggedAccount._id === "-1") {
@@ -68,6 +78,35 @@ function Record() {
     }
   };
 
+  const handleDelete = async () => {
+    console.log("delete");
+    const newReviews = rec.reviews.filter(
+      (review) => review.username != loggedAccount.username
+    );
+
+    const url = `http://localhost:3000/record/${rec._id}`;
+    await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ reviews: newReviews }),
+    }).then((result) => result.json());
+
+    setRec({
+      _id: rec._id,
+      name: rec.name,
+      artists: rec.artists,
+      type: rec.type,
+      genres: rec.genres,
+      released: rec.released,
+      rating: rec.rating,
+      description: rec.description,
+      img: rec.img,
+      reviews: newReviews,
+    });
+  };
+
   useEffect(() => {
     fetch(`http://localhost:3000${path.pathname}`)
       .then((response) => response.json())
@@ -85,6 +124,7 @@ function Record() {
         />
         <div className="infos-container-full">
           <h1 className="record-title">{rec.name}</h1>
+          <h1 className="other-info">{rec.type}</h1>
           <h1 className="other-info">
             {rec.artists.map((artist, index) =>
               index != rec.artists.length - 1 ? artist + ", " : artist
@@ -110,16 +150,33 @@ function Record() {
         </div>
       </div>
       <div className="reviews-container">
-        <AddReviewForm handleAdd={handleAddReview} />
+        {shouldReview() == false && (
+          <AddReviewForm handleAdd={handleAddReview} />
+        )}
         {rec.reviews.map((review) => {
-          return (
-            <Review
-              name={review.username}
-              content={review.content}
-              rating={review.rating}
-              key={review._id}
-            />
-          );
+          if (review.username === loggedAccount.username) {
+            return (
+              <AccountReview
+                name={review.username}
+                content={review.content}
+                rating={review.rating}
+                key={review._id}
+                delete={handleDelete}
+              />
+            );
+          }
+        })}
+        {rec.reviews.map((review) => {
+          if (review.username != loggedAccount.username) {
+            return (
+              <Review
+                name={review.username}
+                content={review.content}
+                rating={review.rating}
+                key={review._id}
+              />
+            );
+          }
         })}
       </div>
     </div>

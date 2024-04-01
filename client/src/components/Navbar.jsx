@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { accountAtom } from "../App.jsx";
 
-function Navbar() {
+function Navbar(props) {
   const [account] = useAtom(accountAtom);
   const navigate = useNavigate();
+
   return (
     <div className="navbar-container">
       <div className="logo-container">
@@ -16,7 +17,7 @@ function Navbar() {
         </button>
       </div>
       <div className="buttons-container">
-        <SearchBar />
+        <SearchBar search={props.search} />
         <button className="navbar-btn" onClick={() => navigate("/explore")}>
           Explore
         </button>

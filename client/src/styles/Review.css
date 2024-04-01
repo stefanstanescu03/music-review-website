@@ -32,3 +32,27 @@
   padding-left: 0.5rem;
   color: rgb(39, 39, 39);
 }
+
+.right-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.delete-btn {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  height: 2rem;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid rgb(243, 243, 243);
+  transition-duration: 0.4s;
+}
+
+.delete-btn:hover {
+  border-radius: 0.5rem;
+  border: 1px solid #ee1f1f;
+  color: #ee1f1f;
+}

@@ -4,3 +4,12 @@
   flex-direction: column;
   align-items: center;
 }
+
+.no-records-text {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ee1f1f;
+  padding-top: 10rem;
+  text-align: center;
+}
