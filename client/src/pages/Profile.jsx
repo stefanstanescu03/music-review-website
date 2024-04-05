@@ -25,7 +25,7 @@ function Profile() {
     <div>
       <Navbar />
       <div className="account-info-container">
-        <h1 className="greeting">Hello {account.last_name}</h1>
+        <h1 className="greeting">Hello {account.first_name}</h1>
         <div className="info-container">
           <h1 className="info-text">First name: {account.first_name}</h1>
           <h1 className="info-text">Last name: {account.last_name}</h1>

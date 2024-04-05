@@ -52,8 +52,6 @@ function Record() {
         rating: parseInt(rating),
       };
 
-      console.log(newReview);
-
       const url = `http://localhost:3000/record/${rec._id}`;
       await fetch(url, {
         method: "PUT",

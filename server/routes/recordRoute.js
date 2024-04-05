@@ -65,6 +65,25 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get("/year/:year", async (req, res) => {
+  try {
+    const { year } = req.params;
+
+    const response = await Record.find({
+      released: { $regex: `${year}`, $options: "i" },
+    });
+
+    if (!response || response.length == 0) {
+      return res.status(404).send({ message: "Record not found" });
+    }
+
+    return res.status(200).send(response);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: error.message });
+  }
+});
+
 router.get("/search/:searchterm", async (req, res) => {
   try {
     const { searchterm } = req.params;
@@ -111,7 +130,6 @@ router.put("/:id", async (req, res) => {
 
     let averageRating = 0;
     req.body.reviews.forEach((review) => (averageRating += review.rating));
-    console.log(averageRating);
     averageRating /= req.body.reviews.length;
 
     const response = await Record.findByIdAndUpdate(id, {

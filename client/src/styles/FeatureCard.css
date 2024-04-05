@@ -1,0 +1,17 @@
+.feature-card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.right-infos-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-text {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: rgb(39, 39, 39);
+}

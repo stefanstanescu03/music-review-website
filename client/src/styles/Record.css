@@ -1,6 +1,7 @@
 .full-img {
-  max-width: 15rem;
+  max-width: 18rem;
   height: auto;
+  align-self: flex-start;
 }
 
 .record-container {

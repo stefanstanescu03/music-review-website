@@ -56,3 +56,9 @@
   border: 1px solid #ee1f1f;
   color: #ee1f1f;
 }
+
+.feature-summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
